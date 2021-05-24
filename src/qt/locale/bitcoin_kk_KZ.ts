@@ -70,7 +70,7 @@
         <translation>Құпия сөзді өзгерту</translation>
     </message>
     <message>
-        <source>Litecoin</source>
+        <source>Favcoin</source>
         <translation>Биткоин</translation>
     </message>
     <message>
