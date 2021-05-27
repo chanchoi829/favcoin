@@ -48,7 +48,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "YAHOO FINANCE 23/May/2021 Ethereum Foundation Says Berlin Hardfork Addressed ‘Clear and Present’ Threat";
+    const char* pszTimestamp = "BBC 24/05/2021 Japan ramps up mass vaccinations in Tokyo and Osaka";
     const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -104,7 +104,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x59c9b9d3fec105bdc716d84caa7579503d5b05b73618d0bf2d5fa639f780a011"); //1353397
+        //consensus.defaultAssumeValid = uint256S("0x59c9b9d3fec105bdc716d84caa7579503d5b05b73618d0bf2d5fa639f780a011"); //1353397
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -118,10 +118,10 @@ public:
         nDefaultPort = 9666;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1621773520, 2085127368, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1622116602, 550330, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xe8e8ae35b1fadb31ffbc7671fbc684ae1e8c78788080e8f9c913ad28c553ef17"));
-        assert(genesis.hashMerkleRoot == uint256S("0x96c697501f45b342015a47023c5da104576d89efb0cb1d875863930a14943861"));
+        assert(consensus.hashGenesisBlock == uint256S("0x4f5f623504cf60d2778d4b4d30f4138aafda24be6b2d213384d1bc64e387ff7c"));
+        assert(genesis.hashMerkleRoot == uint256S("0x3d85607695d7aad12afd5c0862fabe07c37ef40f9da81d6c0d51e26d216bf182"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.emplace_back("seed-a.favcoin.loshan.co.uk", true);
@@ -145,13 +145,13 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {  0, uint256S("0xe8e8ae35b1fadb31ffbc7671fbc684ae1e8c78788080e8f9c913ad28c553ef17")},
+                {  0, uint256S("0x4f5f623504cf60d2778d4b4d30f4138aafda24be6b2d213384d1bc64e387ff7c")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 59c9b9d3fec105bdc716d84caa7579503d5b05b73618d0bf2d5fa639f780a011 (height 1353397).
-            1621773520, // * UNIX timestamp of last known number of transactions
+            1622116602, // * UNIX timestamp of last known number of transactions
             0,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             0.0     // * estimated number of transactions per second after that timestamp
@@ -196,7 +196,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xa0afbded94d4be233e191525dc2d467af5c7eab3143c852c3cd549831022aad6"); //343833
+        //consensus.defaultAssumeValid = uint256S("0xa0afbded94d4be233e191525dc2d467af5c7eab3143c852c3cd549831022aad6"); //343833
 
         pchMessageStart[0] = 0xfd;
         pchMessageStart[1] = 0xd2;
@@ -205,10 +205,10 @@ public:
         nDefaultPort = 19335;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1486949366, 712394, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1486949366, 254494, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xe9ac68ec4f30995e04f52f0f5294cece9123334a8ad5d86ff84b8853ac6c7d2c"));
-        assert(genesis.hashMerkleRoot == uint256S("0x96c697501f45b342015a47023c5da104576d89efb0cb1d875863930a14943861"));
+        assert(consensus.hashGenesisBlock == uint256S("0xf1644ba7ba9194b7dd2c3f7be9a349bf0ee72db8ec97ac0b6213e90c5f0a7ff3"));
+        assert(genesis.hashMerkleRoot == uint256S("0x3d85607695d7aad12afd5c0862fabe07c37ef40f9da81d6c0d51e26d216bf182"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -232,7 +232,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {0, uint256S("e9ac68ec4f30995e04f52f0f5294cece9123334a8ad5d86ff84b8853ac6c7d2c")},
+                {0, uint256S("f1644ba7ba9194b7dd2c3f7be9a349bf0ee72db8ec97ac0b6213e90c5f0a7ff3")},
             }
         };
 
@@ -290,8 +290,8 @@ public:
 
         genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xad69c95e57bdf5a02dac284c2f6365bcc885528807c50a8e7894d8c716b24844"));
-        assert(genesis.hashMerkleRoot == uint256S("0x96c697501f45b342015a47023c5da104576d89efb0cb1d875863930a14943861"));
+        assert(consensus.hashGenesisBlock == uint256S("0x4193ce358b93d89c002a8b87809b051f1c683a91542f63b8cdad373329d309b0"));
+        assert(genesis.hashMerkleRoot == uint256S("0x3d85607695d7aad12afd5c0862fabe07c37ef40f9da81d6c0d51e26d216bf182"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -302,7 +302,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {0, uint256S("ad69c95e57bdf5a02dac284c2f6365bcc885528807c50a8e7894d8c716b24844")},
+                {0, uint256S("4193ce358b93d89c002a8b87809b051f1c683a91542f63b8cdad373329d309b0")},
             }
         };
 
